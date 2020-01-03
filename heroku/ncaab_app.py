@@ -25,9 +25,6 @@ def address():
     home_rank = inputs['home_rank']
     away_name = inputs['away_name']
     away_rank = inputs['away_rank']
-    # validate input
-    # assert isinstance(category, str)
-    # assert isinstance(review, str)
 
     # unpickle
     filename = "pipe.pkl"
@@ -35,17 +32,15 @@ def address():
     model = pickle.load(infile)
     infile.close()
 
-    cols = ['year', 'month', 'day', 'home_name', 'home_rank', 'away_name', 'away_rank']
+    cols = ['year', 'month', 'day', 'home_name',
+            'home_rank', 'away_name', 'away_rank']
     feats = [year, month, day, home_name, home_rank, away_name, away_rank]
 
     df = pd.DataFrame(feats).T
     df.columns = cols
 
-
     # predict
     score = model.predict(df)
-
-    print(score[0])
 
     # use a dictionary to format output for json
     out = {'home_score': score[0][0],

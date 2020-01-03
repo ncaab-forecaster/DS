@@ -2,10 +2,10 @@ import json
 import requests
 
 # if you want to test local
-url = "http://localhost:9000"
+# url = "http://localhost:9000"
 
 # if you want to test deployed
-# url = "http://*****.herokuapp.com"
+url = "http://ncaab.herokuapp.com"
 
 val = {"year": 2018,
        "month": 11,

@@ -7,10 +7,10 @@ verify_ssl = true
 
 [packages]
 numpy = "*"
-pandas = "*"
-sportsreference = "*"
-sklearn = "*"
 flask = "*"
+flask-cors = "*"
+gunicorn = "*"
+sklearn = "*"
 category-encoders = "*"
 
 [requires]
